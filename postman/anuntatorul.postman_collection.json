@@ -1,0 +1,452 @@
+{
+	"info": {
+		"_postman_id": "ecd2b702-19cf-4b95-a515-a4684f6c0a26",
+		"name": "anuntatorul",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "setWH",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/server/telebot/setWH?setWebhook=true",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"server",
+						"telebot",
+						"setWH"
+					],
+					"query": [
+						{
+							"key": "setWebhook",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "assigncommands",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": \n        {\n            \"chat\": {\n                    \"id\": \"132\"\n                },\n            \"text\" : \"textul\"\n        }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/server/telebot/assign-commands",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"server",
+						"telebot",
+						"assign-commands"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idTelegram\": ,\n    \"idChatTelegram\": ,\n    \"name\": \"\",\n    \"userTelegram\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/server/account",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"server",
+						"account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "home",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjQzOTcxNzI2LCJleHAiOjE2NDkwOTgyMDZ9.BCTCjCl9cFeC7VrfbvyTd-xO1E82D7mjQJffK7wqm28",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idTelegram\": ,\n    \"idChatTelegram\": ,\n    \"name\": \"\",\n    \"userTelegram\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/server/home",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"server",
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send message",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"Mergeeeee schimbat!!!!!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/server/telebot/message",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"server",
+						"telebot",
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/server/home/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"server",
+						"home",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user by id  telegram",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/server/account/id-user-telegram/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"server",
+						"account",
+						"id-user-telegram",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update account",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idUserTelegram\": ,\n    \"idChatTelegram\": ,\n    \"name\": \"\",\n    \"userTelegram\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/server/account/11",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"server",
+						"account",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "acount add notification",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountId\": 1,\r\n    \"notificationId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/server/account/notification",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"server",
+						"account",
+						"notification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "account add or delete notifcation",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountId\": 1,\r\n    \"notificationId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/server/account/notification",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"server",
+						"account",
+						"notification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "notification all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountId\": 1,\r\n    \"notificationId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/server/notification",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"server",
+						"notification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "notification by account",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountId\": 1,\r\n    \"notificationId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/server/notification/account/1724676565",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"server",
+						"notification",
+						"account",
+						"1724676565"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "run notifications",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjQzOTcxNzI2LCJleHAiOjE2NDkwOTgyMDZ9.BCTCjCl9cFeC7VrfbvyTd-xO1E82D7mjQJffK7wqm28",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountId\": 1,\r\n    \"notificationId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/server/notification/run-notifications/influenser-fun",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"server",
+						"notification",
+						"run-notifications",
+						"influenser-fun"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"\",\r\n    \"password\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/server/auth/signup",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"server",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"\",\r\n    \"password\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/server/auth/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"server",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

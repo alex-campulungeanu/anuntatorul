@@ -1,0 +1,53 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id Int @id @default(autoincrement())
+  email String @unique
+  password String
+  createdAt      DateTime              @default(now()) @map("created_at")
+  updatedAt      DateTime              @updatedAt() @map("updated_at")
+
+  @@map("user")
+}
+
+model Account {
+  id             Int                   @id @default(autoincrement())
+  createdAt      DateTime              @default(now()) @map("created_at")
+  updatedAt      DateTime              @updatedAt() @map("updated_at")
+  name           String?
+  idChatTelegram Int                   @unique @map("id_chat_telegram")
+  idUserTelegram Int                   @unique @map("id_user_telegram")
+  userTelegram   String?               @unique @map("user_telegram")
+  notifications  AccountNotification[]
+
+  @@map("account")
+}
+
+model Notification {
+  id          Int                   @id @default(autoincrement())
+  name        String                @unique
+  label       String                @unique
+  description String
+  accounts    AccountNotification[]
+
+  @@map("notification")
+}
+
+model AccountNotification {
+  account        Account      @relation(fields: [accountId], references: [id])
+  accountId      Int          @map("account_id")
+  notification   Notification @relation(fields: [notificationId], references: [id])
+  notificationId Int          @map("notification_id")
+  createdAt      DateTime     @default(now()) @map("created_at")
+  validationData String?       @map("validation_data")
+
+  @@id([accountId, notificationId])
+  @@map("account_notitication")
+}
