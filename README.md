@@ -40,7 +40,9 @@ root@78ba61db52c0:/app# npm run dev
 
 ## 💻 Deployment
 - trying to deploy on vercel (currently not working due to 10 seconds limit on functions)
-
+- generate selfsignade certificate
+    openssl genrsa -out localhost.key 2048
+    openssl req -new -x509 -key localhost.key -out localhost.cert -days 3650 -subj /CN=localhost
 
 ## Documentation
 https://github.com/dmbaranov/evemovies-bot
