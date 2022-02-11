@@ -3,6 +3,8 @@ process.env['NODE_CONFIG_DIR'] = __dirname + '/configs';
 
 import express from "express";
 import morgan from 'morgan'
+import fs from 'fs'
+import https from 'https'
 
 import errorMiddleware from './middlewares/error.middleware';
 import HomeRoute from './routes/home.route'
@@ -15,11 +17,20 @@ class App {
   public app: express.Application
   public port: string | number
   public env: string
+  public options: any
+  public server: any
 
   constructor() {
     this.app = express()
     this.port = process.env.PORT || 3012
     this.env = process.env.NODE_ENV || 'development'
+    this.options = {
+      key: fs.readFileSync( './localhost.key' ),
+      cert: fs.readFileSync( './localhost.cert' ),
+      requestCert: false,
+      rejectUnauthorized: false
+    }
+    this.server = https.createServer(this.options, this.app)
     
     this.initializeMiddlewares()
     this.initializeRoutes()
@@ -29,7 +40,7 @@ class App {
   }
   
   public listen() {
-    this.app.listen(this.port, () => {
+    this.server.listen(this.port, () => {
       console.log(`Server on http://localhost:${this.port}/`);
       console.log(`=================================`);
       console.log(`======= ENV: ${this.env} =======`);
