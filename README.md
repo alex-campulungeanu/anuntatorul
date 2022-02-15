@@ -20,7 +20,10 @@ A telegram bot used to notify users on some events.
 Technologies used:
 
 - 📗 **Express JS**
-- ☎️ **telegraf.js**
+- ☎️  **telegraf.js**
+-    **Prisma ORM**
+-    **Typescript**
+-    **Postgres DB**
 - 🌐 **Docker**
 
 
